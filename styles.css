@@ -288,6 +288,70 @@ body.light-theme .site-header {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.demo-section {
+  background: linear-gradient(180deg, rgba(110, 168, 254, 0.08), transparent 72%);
+  border-top: 1px solid var(--border);
+}
+
+.demo-projects-grid {
+  gap: 1.5rem;
+}
+
+.demo-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025));
+  border-color: rgba(139, 184, 255, 0.28);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.32);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.demo-card:hover,
+.demo-card:focus-within {
+  transform: translateY(-4px);
+  border-color: rgba(139, 184, 255, 0.58);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.4);
+}
+
+.project-card.demo-card img {
+  height: 250px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.demo-card .project-content {
+  padding: 1.6rem;
+}
+
+.demo-card .project-actions .btn {
+  width: 100%;
+}
+
+.demo-card-featured {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+}
+
+.project-card.demo-card-featured img {
+  height: 100%;
+  min-height: 360px;
+}
+
+.demo-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  margin-bottom: 0.85rem;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid rgba(73, 222, 128, 0.38);
+  border-radius: 999px;
+  background: rgba(73, 222, 128, 0.12);
+  color: #86efac;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .project-card {
   overflow: hidden;
   border-radius: 24px;
@@ -361,6 +425,7 @@ body.light-theme .site-header {
 @media (max-width: 920px) {
   .hero-grid,
   .project-card.featured,
+  .demo-card-featured,
   .contact-card,
   .experience-grid,
   .projects-grid,
@@ -368,8 +433,13 @@ body.light-theme .site-header {
     grid-template-columns: 1fr;
   }
 
-  .project-card.featured {
+  .project-card.featured,
+  .demo-card-featured {
     display: block;
+  }
+
+  .project-card.demo-card-featured img {
+    min-height: 250px;
   }
 
   .contact-card,
@@ -415,5 +485,11 @@ body.light-theme .site-header {
 
   .section {
     padding: 4.25rem 0;
+  }
+
+  .project-card.demo-card img,
+  .project-card.demo-card-featured img {
+    height: 210px;
+    min-height: 210px;
   }
 }

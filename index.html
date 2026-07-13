@@ -10,60 +10,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Project banner placeholders for projects without screenshots */
-    .project-banner {
-      width: 100%;
-      height: 220px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2.5rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-banner::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.18);
-    }
-
-    .banner-pipeline {
-      background: linear-gradient(135deg, #0f2744 0%, #1a3a5c 40%, #0d5c8a 100%);
-    }
-
-    .banner-qa {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
-    }
-
-    .banner-icon {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 3rem;
-    }
-
-    .impact-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 0.75rem 0 0;
-    }
-
-    .impact-badge {
-      background: rgba(110, 168, 254, 0.12);
-      border: 1px solid rgba(110, 168, 254, 0.25);
-      color: var(--accent-strong);
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.25rem 0.6rem;
-      border-radius: 20px;
-      letter-spacing: 0.04em;
-    }
-
     /* Freelance services section within contact */
     .contact-split {
       display: grid;
@@ -219,92 +165,51 @@
       </div>
     </section>
 
-    <section id="projects" class="section">
+    <section id="projects" class="section demo-section">
       <div class="container">
-        <p class="section-label">Featured projects</p>
-        <h2>Projects that show how I build</h2>
-        <p class="section-intro">These projects span automation pipelines, QA engineering, front-end development, and UX design — reflecting the range of problems I'm equipped to solve.</p>
+        <p class="section-label">Live demos</p>
+        <h2>Playable projects</h2>
+        <p class="section-intro">These are browser projects you can open and use right now. The non-demo case studies stay out of this section so the live work is easier to scan.</p>
 
-        <div class="projects-grid">
-
-          <!-- ✦ NEW: Aero Controls Pipeline -->
-          <article class="project-card">
-            <div class="project-banner banner-pipeline">
-              <span class="banner-icon">⚙️ 🗄️</span>
-            </div>
+        <div class="projects-grid demo-projects-grid">
+          <article class="project-card demo-card demo-card-featured">
+            <img src="assets/images/casinoInprogress.PNG" alt="Screenshot of Casino X hotel and casino game">
             <div class="project-content">
-              <span class="project-tag">Python · SQL Server · Power Automate</span>
-              <h3>Automated Reporting Pipeline — Aero Controls</h3>
-              <p>Replaced a manual, Excel-based reporting workflow with an end-to-end automated pipeline. Data is extracted via Python, processed through SQL Server, and delivered automatically using Power Automate Desktop.</p>
-              <div class="impact-badges">
-                <span class="impact-badge">Manual process eliminated</span>
-                <span class="impact-badge">SQL Server</span>
-                <span class="impact-badge">Power Automate</span>
-                <span class="impact-badge">Error reduction</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- ✦ NEW: Heritage Bank QA -->
-          <article class="project-card">
-            <div class="project-banner banner-qa">
-              <span class="banner-icon">🧪 ✅</span>
-            </div>
-            <div class="project-content">
-              <span class="project-tag">Selenium · TestNG · Java · QA Automation</span>
-              <h3>QA Automation Suite — Heritage Bank</h3>
-              <p>Built and maintained a Selenium/TestNG automation suite to reduce manual regression testing cycles. Contributed to test planning, coverage analysis, and improving overall release confidence.</p>
-              <div class="impact-badges">
-                <span class="impact-badge">Testing cycle reduction</span>
-                <span class="impact-badge">Regression automation</span>
-                <span class="impact-badge">Java · Selenium</span>
-                <span class="impact-badge">TestNG</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <img src="assets/images/blackjack_thumbnail.PNG" alt="Screenshot of Blackjack X game">
-            <div class="project-content">
-              <span class="project-tag">JavaScript · Game Logic</span>
-              <h3>Blackjack X</h3>
-              <p>An interactive browser-based Blackjack project focused on gameplay logic, state handling, and polished user interaction.</p>
+              <span class="demo-status">Live demo</span>
+              <span class="project-tag">JavaScript · Casino Game</span>
+              <h3>Casino X</h3>
+              <p>An interactive casino experience with a hotel-themed interface, polished game flow, and browser-based gameplay.</p>
               <div class="project-actions">
-                <a class="btn btn-secondary" href="https://weaponxd253.github.io/blackjack" target="_blank" rel="noopener">Play Project</a>
+                <a class="btn btn-primary" href="https://weaponxd253.github.io/CasinoX/hotel/index.html" target="_blank" rel="noopener">Play Project</a>
               </div>
             </div>
           </article>
 
-          <article class="project-card">
+          <article class="project-card demo-card">
+            <img src="assets/images/therapist_screen.PNG" alt="Screenshot of Bad Therapist game">
+            <div class="project-content">
+              <span class="demo-status">Live demo</span>
+              <span class="project-tag">JavaScript · Narrative Game</span>
+              <h3>Bad Therapist</h3>
+              <p>A browser game built around offbeat therapy-session choices, scoring, and replayable interactive scenarios.</p>
+              <div class="project-actions">
+                <a class="btn btn-primary" href="https://weaponxd253.github.io/Bad-therapist/" target="_blank" rel="noopener">Play Project</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card demo-card">
             <img src="assets/images/jeopardyImg.PNG" alt="Screenshot of Jeopardy study tool">
             <div class="project-content">
+              <span class="demo-status">Live demo</span>
               <span class="project-tag">JavaScript · Educational Tool</span>
               <h3>Jeopardy Study Tool</h3>
               <p>A study application inspired by quiz-game interactions, built to make learning more engaging and structured.</p>
               <div class="project-actions">
-                <a class="btn btn-secondary" href="https://weaponxd253.github.io/jeopardyStudy/" target="_blank" rel="noopener">Try It</a>
+                <a class="btn btn-primary" href="https://weaponxd253.github.io/jeopardyStudy/" target="_blank" rel="noopener">Try It</a>
               </div>
             </div>
           </article>
-
-          <article class="project-card">
-            <img src="assets/images/Beesbakry.jpg" alt="Bee's Bakery UX project thumbnail">
-            <div class="project-content">
-              <span class="project-tag">UX Case Study</span>
-              <h3>Bee's Bakery</h3>
-              <p>A UX-focused concept centered on creating a smoother bakery ordering experience with intuitive flows and clear visual hierarchy.</p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <img src="assets/images/petFinder.jpg" alt="PetFinder UX project thumbnail">
-            <div class="project-content">
-              <span class="project-tag">UX Case Study</span>
-              <h3>PetFinder</h3>
-              <p>A concept project designed to help connect potential pet owners with animals in need of homes through clearer browsing and discovery.</p>
-            </div>
-          </article>
-
         </div>
       </div>
     </section>
