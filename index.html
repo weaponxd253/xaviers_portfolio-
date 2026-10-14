@@ -46,7 +46,7 @@
     <section id="home" class="hero section">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">BI & Automation Engineer · Power BI · SQL · API Integrations</p>
+          <p class="eyebrow">BI & Automation Engineer · Power BI · Tableau · SQL</p>
           <h1>I turn manual work and messy data into automations and dashboards.</h1>
           <p class="hero-text">
             6+ years across software support, QA automation, and development. Today I build the integrations, data pipelines, and Power BI reporting that connect business systems and take hours of manual effort off people's plates.
@@ -104,7 +104,7 @@
       <div class="container">
         <p class="section-label">Case studies</p>
         <h2>Work that saves real time</h2>
-        <p class="section-intro">Highlights from my day job. Internal systems and data stay private, so these focus on the problem, the approach, and the result.</p>
+        <p class="section-intro">Highlights from my day job, plus personal Power BI and Tableau projects on public data. Work reports are recreated with sample data, because the real data stays private.</p>
 
         <div class="case-grid">
           <article class="case-card case-card-wide">
@@ -218,6 +218,77 @@
             </ul>
           </article>
 
+          <article class="case-card case-card-wide">
+            <span class="project-tag">Personal project · Power BI · Public data</span>
+            <h3>NTSB aviation safety analysis <span class="wip-badge">In progress</span></h3>
+            <dl class="case-details">
+              <dt>Goal</dt>
+              <dd>A sandbox for trying new Power BI techniques on a large, messy, real-world dataset: about 47,000 NTSB aviation events from 2000 to today.</dd>
+              <dt>Approach</dt>
+              <dd>Wrote a script to pull event data from the NTSB's public data, then grouped the free-text probable-cause narratives into eight primary cause categories, tracking how many events could be categorized (83%) as its own KPI. Report pages cover safety trends, causes, injury severity, aircraft category, manufacturer, and damage, with slicers for year, state, cause, aircraft, and weather.</dd>
+              <dt>Result</dt>
+              <dd><strong>A working analysis of 25+ years of aviation events</strong>, and my test bed for new visuals, DAX patterns, and modeling ideas before I use them at work.</dd>
+            </dl>
+            <ul class="pbi-gallery pbi-gallery-two" aria-label="NTSB aviation safety report pages">
+              <li>
+                <a href="assets/images/powerbi/ntsb-overview.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/powerbi/ntsb-overview-thumb.webp" width="720" height="399" loading="lazy" alt="Aviation Safety Overview page: total events, fatal events, fatalities, fatal event rate and cause coverage KPIs, events by primary cause, events by year, and events by injury severity">
+                  <span>Aviation Safety Overview</span>
+                </a>
+              </li>
+              <li>
+                <a href="assets/images/powerbi/ntsb-risk-factors.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/powerbi/ntsb-risk-factors-thumb.webp" width="720" height="402" loading="lazy" alt="Aircraft and Risk Factors page: events by aircraft category, fatal event share by category, top aircraft makes, and aircraft damage severity">
+                  <span>Aircraft &amp; Risk Factors</span>
+                </a>
+              </li>
+            </ul>
+            <p class="sample-note">Real report on public NTSB data. Still a work in progress.</p>
+            <ul class="tech-list" aria-label="Technologies used">
+              <li>Power BI</li><li>DAX</li><li>Scripted data extraction</li><li>Text categorization</li><li>Public data</li>
+            </ul>
+          </article>
+
+          <article class="case-card case-card-wide">
+            <span class="project-tag">Personal project · Tableau · Public data</span>
+            <h3>NFL Draft ROI</h3>
+            <dl class="case-details">
+              <dt>Goal</dt>
+              <dd>Answer a question I care about with data: which NFL teams get the most value from their draft picks?</dd>
+              <dt>Approach</dt>
+              <dd>Built a Value Over Expected (VOE) metric from Pro Football Reference draft data (1990–2025): each player's career Approximate Value minus the expected career value for their draft round, using only classes old enough for careers to be complete. Every pick is classified as a steal, expected, or bust. An overview dashboard compares all teams and positions, and an interactive Team Explorer shows any team's hit rate, VOE trend, position strengths, and biggest steals and busts.</dd>
+              <dt>Result</dt>
+              <dd><strong>A public, interactive Tableau dashboard</strong> covering 35 years of drafts, from league-wide patterns like which positions return the most value in each round, down to individual players.</dd>
+            </dl>
+            <ul class="pbi-gallery" aria-label="NFL Draft ROI dashboards">
+              <li>
+                <a href="assets/images/tableau/nfl-draft-overview.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/tableau/nfl-draft-overview-thumb.webp" width="720" height="341" loading="lazy" alt="NFL Draft ROI overview dashboard: career value vs draft pick scatter plot, best and worst drafting teams by value over expected, and steal vs bust rates by team">
+                  <span>Overview dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="assets/images/tableau/nfl-draft-team-explorer.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/tableau/nfl-draft-team-explorer-thumb.webp" width="720" height="364" loading="lazy" alt="Team Explorer dashboard for one team: hit rate, average and total value over expected, VOE by year and by position, and biggest steals and busts">
+                  <span>Team Explorer dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="assets/images/tableau/nfl-draft-position-heatmap.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/tableau/nfl-draft-position-heatmap-thumb.webp" width="680" height="345" loading="lazy" alt="Heatmap of average value over expected by position group and draft round">
+                  <span>Position value by round</span>
+                </a>
+              </li>
+            </ul>
+            <p class="sample-note">Real dashboards on public data, published on Tableau Public.</p>
+            <div class="case-actions">
+              <a class="btn btn-primary" href="https://public.tableau.com/views/NFLDraftROI/TeamExplorer?:language=en-US&amp;:display_count=n&amp;:origin=viz_share_link" target="_blank" rel="noopener">Explore it live on Tableau Public ↗</a>
+            </div>
+            <ul class="tech-list" aria-label="Technologies used">
+              <li>Tableau</li><li>Calculated fields</li><li>Interactive filters</li><li>Public data</li>
+            </ul>
+          </article>
+
           <article class="case-card">
             <span class="project-tag">Automation · API Integration</span>
             <h3>Ticket-driven account provisioning</h3>
@@ -260,7 +331,7 @@
         <div class="skills-grid">
           <div class="skill-group">
             <h3>BI & Data</h3>
-            <p>Power BI, DAX, data modeling, SQL Server / T-SQL, ETL, data validation, Azure SQL, MySQL</p>
+            <p>Power BI, DAX, Tableau, data modeling, SQL Server / T-SQL, ETL, data validation, Azure SQL, MySQL</p>
           </div>
           <div class="skill-group">
             <h3>Automation & Integration</h3>
