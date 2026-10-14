@@ -532,6 +532,10 @@ body.light-theme .demo-status {
   font-style: italic;
 }
 
+.case-actions {
+  margin-bottom: 1.25rem;
+}
+
 .tech-list {
   display: flex;
   flex-wrap: wrap;

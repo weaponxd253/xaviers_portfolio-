@@ -11,7 +11,7 @@ I turn manual work and messy data into automations and dashboards. I have 6+ yea
 - **Ticket-driven account provisioning:** Jira REST API + Java/Selenium + PowerShell workflow that turned a ~20-minute manual setup into a single automated action.
 - **Automated SQL data pipeline:** PowerShell pipeline that runs SQL Server queries, validates results, and exchanges data between systems, eliminating ~200 hours/year of manual work.
 - **Power BI reporting:** a 12-page daily executive dashboard, an operations / backlog / WIP report, and a labor utilization report for the CFO and department managers (shown on the site with sample data).
-- **Personal BI projects:** an NTSB aviation safety analysis in Power BI and an NFL Draft ROI dashboard on Tableau Public.
+- **Personal BI projects:** an NTSB aviation safety analysis in Power BI and an [NFL Draft ROI dashboard on Tableau Public](https://public.tableau.com/views/NFLDraftROI/TeamExplorer?:language=en-US&:display_count=n&:origin=viz_share_link).
 - **QA automation at Heritage Bank:** Selenium/Python test suites that cut testing cycle time 30% and defects 22%.
 
 ## Skills
