@@ -3,64 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xavier Denson | Software Developer Portfolio</title>
-  <meta name="description" content="Portfolio of Xavier Denson, a software developer with experience in software support, QA, SQL, automation, and user-focused web development.">
+  <title>Xavier Denson | BI & Automation Engineer</title>
+  <meta name="description" content="Portfolio of Xavier Denson, a BI and automation engineer working in Power BI, SQL Server, PowerShell, REST API integrations, and Azure / Entra ID. Open to remote (US) or hybrid roles in the Puget Sound area.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Freelance services section within contact */
-    .contact-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: start;
-    }
-
-    .contact-divider {
-      width: 1px;
-      background: var(--border);
-      align-self: stretch;
-    }
-
-    .services-list {
-      list-style: none;
-      padding: 0;
-      margin: 0.75rem 0 1.25rem;
-      display: grid;
-      gap: 0.5rem;
-    }
-
-    .services-list li {
-      color: var(--muted);
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-
-    .services-list li::before {
-      content: '→';
-      color: var(--accent);
-      flex-shrink: 0;
-      margin-top: 0.05rem;
-    }
-
-    .contact-card {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    @media (max-width: 720px) {
-      .contact-split {
-        grid-template-columns: 1fr;
-      }
-      .contact-divider {
-        width: 100%;
-        height: 1px;
-      }
-    }
-  </style>
 </head>
 <body>
   <header class="site-header">
@@ -74,9 +22,10 @@
         <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">☰</button>
         <ul id="navMenu">
           <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -91,21 +40,22 @@
     <section id="home" class="hero section">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Software Developer · QA & Test Automation · SQL & Data Pipelines</p>
-          <h1>I build practical software that solves real problems.</h1>
+          <p class="eyebrow">BI & Automation Engineer · Power BI · SQL · API Integrations</p>
+          <h1>I turn manual work and messy data into automations and dashboards.</h1>
           <p class="hero-text">
-            I bring experience across software support, development, QA automation, and data engineering. My strength is turning messy processes into reliable tools, automated workflows, and systems that actually hold up.
+            6+ years across software support, QA automation, and development. Today I build the integrations, data pipelines, and Power BI reporting that connect business systems and take hours of manual effort off people's plates.
           </p>
 
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#projects">View Projects</a>
-            <a class="btn btn-secondary" href="assets/documents/Densonx2024.pdf" download>Download Resume</a>
+            <a class="btn btn-primary" href="#work">See My Work</a>
+            <a class="btn btn-secondary" href="assets/documents/Xavier_Denson_Resume.pdf" download>Download Resume</a>
           </div>
 
           <ul class="hero-points">
-            <li>Built automated data pipelines replacing manual Excel processes with Python, SQL & Power Automate</li>
-            <li>Reduced QA testing cycles through Selenium/TestNG automation at Heritage Bank</li>
-            <li>Focused on business impact: time saved, errors eliminated, workflows simplified</li>
+            <li>Automated Jira-driven account provisioning: a ~20-minute manual process is now a single automated action</li>
+            <li>Built a PowerShell + SQL Server data pipeline that eliminated ~200 hours/year of manual work</li>
+            <li>Building Power BI reporting on top of the SQL data I manage and automate</li>
+            <li>Cut QA testing cycle time 30% and defects 22% with Selenium/Python automation at Heritage Bank</li>
           </ul>
         </div>
 
@@ -113,12 +63,12 @@
           <img src="assets/images/myLogo.jpg" alt="Portrait or logo for Xavier Denson" class="profile-img">
           <h2>Currently targeting</h2>
           <ul>
-            <li>SDET / QA Automation Engineer</li>
-            <li>Data Engineer / SQL Developer</li>
-            <li>Software Support Engineer</li>
-            <li>Internal Tools / Automation Developer</li>
-            <li>Remote or hybrid in Pacific Northwest</li>
+            <li>BI / Power BI Developer</li>
+            <li>Analytics Engineer</li>
+            <li>Automation & Integration Engineer</li>
+            <li>Business Systems Analyst</li>
           </ul>
+          <p class="availability">Open to remote (US) or hybrid in the Puget Sound area</p>
         </aside>
       </div>
     </section>
@@ -126,50 +76,138 @@
     <section id="about" class="section">
       <div class="container narrow">
         <p class="section-label">About</p>
-        <h2>Technical problem solver with a user-first mindset</h2>
+        <h2>Systems thinker who measures results in hours saved</h2>
         <p>
-          I'm Xavier Denson, a software development professional with a BS in Software Development from Green River College and a Google Advanced Data Analytics certification. My background spans QA automation, SQL data engineering, software support, and full-stack development — which means I understand both how systems are built and how they break.
+          I'm Xavier Denson, a systems and automation-focused IT professional with a B.S. in Software Development from Green River College and a Google Advanced Data Analytics certificate. My background spans software support, QA automation, and development, so I understand both how systems are built and how they break.
         </p>
         <p>
-          In my current role at Aero Controls, I built an automated data pipeline using Python, SQL Server, and Power Automate that replaced a manual Excel-based reporting process. At Heritage Bank, I reduced testing cycles through Selenium and TestNG automation. I enjoy work where the output is measurable — less manual effort, fewer errors, faster delivery.
+          At Aero Controls I design the automations and integrations that connect our business systems: a Jira REST API workflow that provisions and deactivates user accounts straight from tickets, a PowerShell / SQL Server pipeline that runs, validates, and moves data between systems, and, increasingly, Power BI reporting built on that data. I also administer Azure / Entra ID identity and access alongside Intune and Microsoft 365.
         </p>
         <p>
-          I'm especially effective in roles where debugging, data accuracy, cross-team collaboration, and practical software delivery all matter. I'm also available for freelance projects in automation, SQL reporting, and internal tooling.
+          Before that I built Selenium and Python test automation at Heritage Bank while working with regulated financial data, and Java / Spring Boot APIs as an intern at Costco. I use AI-assisted development (Claude Code and MCP tooling) to build and debug faster, and I validate its output against source systems before anything reaches production.
+        </p>
+        <p>
+          I'm also available for freelance work in Power BI, SQL reporting, and workflow automation.
         </p>
       </div>
     </section>
 
-    <section id="experience" class="section alt-section">
+    <section id="work" class="section alt-section">
+      <div class="container">
+        <p class="section-label">Case studies</p>
+        <h2>Work that saves real time</h2>
+        <p class="section-intro">Highlights from my day job. Internal systems and data stay private, so these focus on the problem, the approach, and the result.</p>
+
+        <div class="case-grid">
+          <article class="case-card">
+            <span class="project-tag">Automation · API Integration</span>
+            <h3>Ticket-driven account provisioning</h3>
+            <dl class="case-details">
+              <dt>Problem</dt>
+              <dd>Setting up and deactivating user accounts was a ~20-minute manual process for every request, repeated across multiple systems.</dd>
+              <dt>Approach</dt>
+              <dd>Built a cross-system workflow that pulls tickets from the Jira REST API and drives account provisioning and deactivation with Java / Selenium and PowerShell.</dd>
+              <dt>Result</dt>
+              <dd><strong>~20 minutes → one automated action</strong>, with consistent setup and fewer missed steps.</dd>
+            </dl>
+            <ul class="tech-list" aria-label="Technologies used">
+              <li>Jira REST API</li><li>PowerShell</li><li>Java</li><li>Selenium</li>
+            </ul>
+          </article>
+
+          <article class="case-card">
+            <span class="project-tag">Data Pipeline · SQL</span>
+            <h3>Automated SQL data pipeline</h3>
+            <dl class="case-details">
+              <dt>Problem</dt>
+              <dd>Recurring data pulls and hand-offs between systems ate hours of manual work every week and left room for errors.</dd>
+              <dt>Approach</dt>
+              <dd>Built a scheduled PowerShell pipeline that runs SQL Server queries, validates the results, and exchanges the data with downstream systems.</dd>
+              <dt>Result</dt>
+              <dd><strong>~4 hours/week (~200 hours/year) eliminated</strong>, with built-in validation for accuracy.</dd>
+            </dl>
+            <ul class="tech-list" aria-label="Technologies used">
+              <li>PowerShell</li><li>SQL Server / T-SQL</li><li>Task Scheduler</li>
+            </ul>
+          </article>
+
+          <!-- TODO: add 1–3 Power BI screenshots (blur or swap in sample data) to assets/images/
+               and specific results (dashboards built, who uses them, reports or hours replaced). -->
+          <article class="case-card case-card-wide">
+            <span class="project-tag">Business Intelligence · Power BI</span>
+            <h3>Power BI reporting</h3>
+            <dl class="case-details">
+              <dt>Problem</dt>
+              <dd>Stakeholders depended on one-off report requests and manual exports to see what was happening in the data.</dd>
+              <dt>Approach</dt>
+              <dd>Building Power BI reports and dashboards on top of the SQL Server data I already manage and automate: shaping and modeling the data, writing measures, and turning recurring requests into dashboards people can check themselves.</dd>
+              <dt>Result</dt>
+              <dd>Self-serve visibility for stakeholders and leadership, backed by the same validated pipeline data.</dd>
+            </dl>
+            <ul class="tech-list" aria-label="Technologies used">
+              <li>Power BI</li><li>DAX</li><li>Power Query</li><li>SQL Server</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
       <div class="container">
         <p class="section-label">Experience highlights</p>
         <h2>What I bring to a team</h2>
 
         <div class="experience-grid">
           <article class="info-card">
-            <h3>Test Automation & QA</h3>
-            <p>Selenium/TestNG automation at Heritage Bank reduced manual testing cycles. Hands-on with test planning, edge case coverage, and quality process improvement.</p>
+            <h3>Power BI & Reporting</h3>
+            <p>Turning SQL Server data into Power BI reports and dashboards, with the data validation behind them to make sure the numbers are right.</p>
           </article>
           <article class="info-card">
-            <h3>Data Pipelines & SQL</h3>
-            <p>Built end-to-end reporting automation with Python, SQL Server, and Power Automate at Aero Controls. Comfortable with T-SQL, stored procedures, and data modeling.</p>
+            <h3>Automation & API Integrations</h3>
+            <p>REST API integrations (Jira and third-party APIs) and PowerShell automation that connect business systems and remove repetitive manual work.</p>
           </article>
           <article class="info-card">
-            <h3>Software Support & Troubleshooting</h3>
-            <p>Experience diagnosing technical issues, supporting business-critical software, and improving reliability across enterprise environments.</p>
+            <h3>Azure, Entra ID & Microsoft 365</h3>
+            <p>Identity, authentication, and access controls in Entra ID, with Intune and Microsoft 365 for user access, permissions, and software compliance.</p>
           </article>
           <article class="info-card">
-            <h3>Cross-functional Communication</h3>
-            <p>Able to bridge technical implementation with business needs — from documentation and Jira workflows to stakeholder reporting and support conversations.</p>
+            <h3>QA, Documentation & Stakeholders</h3>
+            <p>Test automation background (Selenium, Python, SQL validation), plus solution documentation, SOPs, and clear communication with technical and non-technical teams, including leadership.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section alt-section">
+      <div class="container">
+        <p class="section-label">Skills</p>
+        <h2>Core tools and strengths</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>BI & Data</h3>
+            <p>Power BI, SQL Server / T-SQL, ETL, data validation, Azure SQL, MySQL</p>
+          </div>
+          <div class="skill-group">
+            <h3>Automation & Integration</h3>
+            <p>PowerShell, REST APIs (Jira REST API), Power Automate, Task Scheduler, Selenium / TestNG, Postman</p>
+          </div>
+          <div class="skill-group">
+            <h3>Microsoft & Cloud</h3>
+            <p>Azure / Entra ID, Microsoft Intune, Microsoft 365, Azure DevOps, Docker</p>
+          </div>
+          <div class="skill-group">
+            <h3>Languages & AI</h3>
+            <p>SQL, PowerShell, Java, JavaScript, Python, HTML / CSS, Claude Code & MCP tooling</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="projects" class="section demo-section">
       <div class="container">
-        <p class="section-label">Live demos</p>
-        <h2>Playable projects</h2>
-        <p class="section-intro">These are browser projects you can open and use right now. The non-demo case studies stay out of this section so the live work is easier to scan.</p>
+        <p class="section-label">Side projects</p>
+        <h2>Things I've built for fun</h2>
+        <p class="section-intro">Browser projects you can open and play right now.</p>
 
         <div class="projects-grid demo-projects-grid">
           <article class="project-card demo-card demo-card-featured">
@@ -214,32 +252,6 @@
       </div>
     </section>
 
-    <section id="skills" class="section alt-section">
-      <div class="container">
-        <p class="section-label">Skills</p>
-        <h2>Core tools and strengths</h2>
-        <div class="skills-grid">
-          <div class="skill-group">
-            <h3>Languages</h3>
-            <p>JavaScript, Python, Java, SQL / T-SQL, HTML, CSS</p>
-          </div>
-          <div class="skill-group">
-            <h3>Testing & QA</h3>
-            <p>Selenium, TestNG, QA automation, regression testing, debugging, documentation</p>
-          </div>
-          <div class="skill-group">
-            <h3>Data & Tools</h3>
-            <p>SQL Server, MySQL, Power Automate, Power BI, Jira, Azure DevOps, Postman</p>
-          </div>
-          <div class="skill-group">
-            <h3>Platforms</h3>
-            <p>Microsoft Intune, Azure SQL, Asset Panda, Docker, Agile / Scrum</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ✦ UPDATED: Contact with freelance split -->
     <section id="contact" class="section">
       <div class="container">
         <div class="contact-card">
@@ -247,11 +259,10 @@
           <h2>Let's connect</h2>
 
           <div class="contact-split">
-            <!-- Column 1: Job opportunities -->
             <div>
-              <p style="color: var(--accent-strong); font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem;">🏢 Open to full-time roles</p>
-              <p>I'm targeting SDET, Data Engineer, and SQL-focused roles in the Pacific Northwest. If you're hiring for a team where automation, data accuracy, and practical delivery matter — let's talk.</p>
-              <div class="contact-actions" style="margin-top: 1rem;">
+              <p class="contact-kicker">🏢 Open to full-time roles</p>
+              <p>I'm targeting BI, analytics engineering, and automation roles, remote (US) or hybrid in the Puget Sound area. If your team needs someone to automate the manual work and turn the data into dashboards people actually use, let's talk.</p>
+              <div class="contact-actions">
                 <a class="btn btn-primary" href="mailto:xdenson253@outlook.com?subject=Opportunity%20for%20Xavier%20Denson">Email Me</a>
                 <a class="btn btn-secondary" href="https://www.linkedin.com/in/xavier-denson/" target="_blank" rel="noopener">LinkedIn</a>
                 <a class="btn btn-secondary" href="https://github.com/weaponxd253?tab=repositories" target="_blank" rel="noopener">GitHub</a>
@@ -260,15 +271,14 @@
 
             <div class="contact-divider"></div>
 
-            <!-- Column 2: Freelance -->
             <div>
-              <p style="color: var(--accent-strong); font-weight: 700; font-size: 0.9rem; margin-bottom: 0.5rem;">⚡ Available for freelance</p>
-              <p>I take on project-based work for small businesses and teams that need practical software help without a full-time hire.</p>
+              <p class="contact-kicker">⚡ Available for freelance</p>
+              <p>I take on project-based work for small businesses and teams that need practical data and automation help without a full-time hire.</p>
               <ul class="services-list">
-                <li>SQL reporting & dashboard automation</li>
-                <li>Internal tools & workflow automation</li>
+                <li>Power BI dashboards & SQL reporting</li>
+                <li>Workflow automation & API integrations</li>
+                <li>Microsoft 365 / Entra ID cleanup & access setup</li>
                 <li>QA scripting & regression test setup</li>
-                <li>Web builds & interactive front-ends</li>
               </ul>
               <a class="btn btn-secondary" href="mailto:xdenson253@outlook.com?subject=Freelance%20Project%20Inquiry">Discuss a Project</a>
             </div>
@@ -281,7 +291,7 @@
 
   <footer class="site-footer">
     <div class="container footer-wrap">
-      <p>© 2026 Xavier Denson. Built to showcase practical software skills and real-world value.</p>
+      <p>© 2026 Xavier Denson. BI, automation, and practical software that saves real time.</p>
       <a href="#home">Back to top ↑</a>
     </div>
   </footer>

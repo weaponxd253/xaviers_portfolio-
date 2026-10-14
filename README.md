@@ -1,40 +1,38 @@
-# Xavier Denson's Portfolio
+# Xavier Denson | BI & Automation Engineer
 
-Welcome to my portfolio, where innovative design meets flawless code to create user-friendly, visually stunning websites.
+Personal portfolio site: **https://weaponxd253.github.io/xaviers_portfolio-/**
 
-## About Me
+I turn manual work and messy data into automations and dashboards. I have 6+ years across software support, QA automation, and development, and today I build REST API integrations, SQL data pipelines, and Power BI reporting.
 
-Hello! I'm Xavier Denson, a dedicated and passionate software development professional with a robust background in software support, quality assurance, and development. I hold a Bachelor of Science in Software Development and an Associate in Information Technology-Systems & Security from Green River College, as well as an Associate in Information Technology from Pierce College.
+**Open to remote (US) or hybrid roles in the Puget Sound area:** BI / Power BI Developer, Analytics Engineer, Automation & Integration Engineer, Business Systems Analyst.
 
-With over five years of diverse experience in the tech industry, I've honed my skills in software support, quality assurance, and development through various roles. Currently, I serve as a Software Support Specialist at Aero Controls, where I execute SQL scripts, manage support tickets, and ensure data integrity and system performance.
+## Highlights
 
-In my free time, I enjoy exploring new technologies, staying updated with the latest trends in software development, and contributing to the tech community.
-
-## Projects
-
-### Bee's Bakery UX Project
-Delightful bakery app: seamless ordering, quick delivery.
-
-
-### PetFinder UX Project
-Connecting potential pet owners with animals in need of a home.
-
-
-### Weather Site Using API
-A comprehensive weather forecasting application.
-- [Project Page](https://weaponxd253.github.io/weather-site)
+- **Ticket-driven account provisioning:** Jira REST API + Java/Selenium + PowerShell workflow that turned a ~20-minute manual setup into a single automated action.
+- **Automated SQL data pipeline:** PowerShell pipeline that runs SQL Server queries, validates results, and exchanges data between systems, eliminating ~200 hours/year of manual work.
+- **Power BI reporting:** dashboards and reports built on the same validated SQL Server data.
+- **QA automation at Heritage Bank:** Selenium/Python test suites that cut testing cycle time 30% and defects 22%.
 
 ## Skills
 
-- **Programming Languages**: Java, JavaScript, SQL
-- **Frameworks & Tools**: Docker, Jira
-- **Others**: User acceptance testing, hardware/software troubleshooting, UX research methods and design
+- **BI & Data:** Power BI, SQL Server / T-SQL, ETL, data validation, Azure SQL, MySQL
+- **Automation & Integration:** PowerShell, REST APIs (Jira REST API), Power Automate, Selenium / TestNG, Postman
+- **Microsoft & Cloud:** Azure / Entra ID, Microsoft Intune, Microsoft 365, Azure DevOps, Docker
+- **Languages & AI:** SQL, PowerShell, Java, JavaScript, Python, Claude Code & MCP tooling
 
-## Contact Information
+## Running locally
 
-Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/xavier-denson), or reach out via email at [xdenson253@outlook.com](mailto:xdenson253@outlook.com). Let's collaborate and create something amazing together!
+The site is plain HTML/CSS/JS. Open `index.html` in a browser, or serve the folder with any static server.
 
-## Acknowledgments
+Tests check the page structure, that every local link and image resolves, and the theme toggle:
 
-Special thanks to my professors at Green River College and Pierce College ! 
+```bash
+npm install
+npm test
+```
 
+## Contact
+
+- Email: [xdenson253@outlook.com](mailto:xdenson253@outlook.com)
+- LinkedIn: [linkedin.com/in/xavier-denson](https://www.linkedin.com/in/xavier-denson)
+- GitHub: [github.com/weaponxd253](https://github.com/weaponxd253)
