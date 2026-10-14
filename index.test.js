@@ -15,7 +15,7 @@ describe('Portfolio page', () => {
   beforeEach(loadPage);
 
   test('has every main section', () => {
-    ['home', 'about', 'work', 'experience', 'skills', 'projects', 'contact'].forEach(id => {
+    ['home', 'about', 'work', 'skills', 'projects', 'contact'].forEach(id => {
       expect(document.getElementById(id)).not.toBeNull();
     });
   });
@@ -61,9 +61,33 @@ describe('Portfolio page', () => {
 describe('Interactions', () => {
   beforeEach(loadPage);
 
+  afterEach(() => {
+    delete window.matchMedia;
+  });
+
+  test('theme follows the device setting until the visitor picks one', () => {
+    window.matchMedia = query => ({ matches: query === '(prefers-color-scheme: light)' });
+    loadPage();
+
+    expect(document.body.classList.contains('light-theme')).toBe(true);
+    expect(localStorage.getItem('portfolio-theme')).toBeNull();
+  });
+
+  test('theme icon and label describe what a click will do', () => {
+    const switcher = document.getElementById('themeSwitcher');
+    const icon = document.getElementById('themeSwitcherIcon');
+    expect(icon.textContent).toBe('☀️');
+    expect(switcher.getAttribute('aria-label')).toBe('Switch to light theme');
+
+    switcher.click();
+    expect(icon.textContent).toBe('🌙');
+    expect(switcher.getAttribute('aria-label')).toBe('Switch to dark theme');
+  });
+
   test('theme switcher toggles light mode and remembers it', () => {
     const switcher = document.getElementById('themeSwitcher');
     expect(document.body.classList.contains('light-theme')).toBe(false);
+    expect(localStorage.getItem('portfolio-theme')).toBeNull();
 
     switcher.click();
     expect(document.body.classList.contains('light-theme')).toBe(true);

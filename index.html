@@ -11,6 +11,13 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('portfolio-theme');
+      var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      if (savedTheme === 'light' || (!savedTheme && prefersLight)) document.body.classList.add('light-theme');
+    } catch (e) {}
+  </script>
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#home" aria-label="Go to home section">
@@ -23,15 +30,14 @@
         <ul id="navMenu">
           <li><a href="#about">About</a></li>
           <li><a href="#work">Work</a></li>
-          <li><a href="#experience">Experience</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
-      <button id="themeSwitcher" class="theme-switcher" type="button" aria-label="Toggle theme">
-        <span id="themeSwitcherIcon" aria-hidden="true">🌙</span>
+      <button id="themeSwitcher" class="theme-switcher" type="button" aria-label="Switch to light theme">
+        <span id="themeSwitcherIcon" aria-hidden="true">☀️</span>
       </button>
     </div>
   </header>
@@ -51,12 +57,20 @@
             <a class="btn btn-secondary" href="assets/documents/Xavier_Denson_Resume.pdf" download>Download Resume</a>
           </div>
 
-          <ul class="hero-points">
-            <li>Automated Jira-driven account provisioning: a ~20-minute manual process is now a single automated action</li>
-            <li>Built a PowerShell + SQL Server data pipeline that eliminated ~200 hours/year of manual work</li>
-            <li>Building Power BI reporting on top of the SQL data I manage and automate</li>
-            <li>Cut QA testing cycle time 30% and defects 22% with Selenium/Python automation at Heritage Bank</li>
-          </ul>
+          <dl class="hero-stats">
+            <div>
+              <dt>200 hrs/yr</dt>
+              <dd>manual work removed by a SQL data pipeline</dd>
+            </div>
+            <div>
+              <dt>20 min → 1 click</dt>
+              <dd>account setup via Jira API automation</dd>
+            </div>
+            <div>
+              <dt>30% faster</dt>
+              <dd>QA test cycles, with 22% fewer defects</dd>
+            </div>
+          </dl>
         </div>
 
         <aside class="hero-card">
@@ -78,16 +92,10 @@
         <p class="section-label">About</p>
         <h2>Systems thinker who measures results in hours saved</h2>
         <p>
-          I'm Xavier Denson, a systems and automation-focused IT professional with a B.S. in Software Development from Green River College and a Google Advanced Data Analytics certificate. My background spans software support, QA automation, and development, so I understand both how systems are built and how they break.
+          I'm Xavier Denson, a systems and automation-focused IT professional with a B.S. in Software Development and a Google Advanced Data Analytics certificate. At Aero Controls I build the integrations, SQL pipelines, and Power BI reporting that connect our business systems, and I administer Azure / Entra ID identity and access alongside Intune and Microsoft 365.
         </p>
         <p>
-          At Aero Controls I design the automations and integrations that connect our business systems: a Jira REST API workflow that provisions and deactivates user accounts straight from tickets, a PowerShell / SQL Server pipeline that runs, validates, and moves data between systems, and, increasingly, Power BI reporting built on that data. I also administer Azure / Entra ID identity and access alongside Intune and Microsoft 365.
-        </p>
-        <p>
-          Before that I built Selenium and Python test automation at Heritage Bank while working with regulated financial data, and Java / Spring Boot APIs as an intern at Costco. I use AI-assisted development (Claude Code and MCP tooling) to build and debug faster, and I validate its output against source systems before anything reaches production.
-        </p>
-        <p>
-          I'm also available for freelance work in Power BI, SQL reporting, and workflow automation.
+          Before that I built Selenium and Python test automation on regulated financial data at Heritage Bank, and Java / Spring Boot APIs at Costco. I document what I build, work easily with technical and non-technical teams, and use AI-assisted development (Claude Code, MCP) while validating its output against source systems.
         </p>
       </div>
     </section>
@@ -99,6 +107,117 @@
         <p class="section-intro">Highlights from my day job. Internal systems and data stay private, so these focus on the problem, the approach, and the result.</p>
 
         <div class="case-grid">
+          <article class="case-card case-card-wide">
+            <span class="project-tag">Business Intelligence · Power BI</span>
+            <h3>Daily executive dashboard</h3>
+            <dl class="case-details">
+              <dt>Problem</dt>
+              <dd>Leadership needed a single daily snapshot of sales orders, shipments, quotes, contracts, and aircraft-on-ground (AOG) priority jobs, plus the detail behind each number.</dd>
+              <dt>Approach</dt>
+              <dd>Built a 12-page Power BI report that refreshes every morning: an executive dashboard with headline KPIs, shipped dollars by customer, AOG jobs by status, and quotes by sales rep, backed by 11 detail pages for open exchanges, sales orders, airline quotes, quotes by part number and rep, contracts, AOG critical jobs, and jobs shipped and invoiced.</dd>
+              <dt>Result</dt>
+              <dd><strong>A daily report for leadership</strong>: the day's numbers at a glance, with every figure traceable to the work orders behind it.</dd>
+            </dl>
+            <ul class="pbi-gallery" aria-label="Daily executive dashboard pages">
+              <li>
+                <a href="assets/images/powerbi/daily-dashboard.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/powerbi/daily-dashboard-thumb.webp" width="720" height="450" loading="lazy" alt="Daily Executive Dashboard page: sales orders, jobs shipped, contract and quote KPIs, shipped dollars by customer, AOG jobs by status, quotes by rep, and shipped job status">
+                  <span>Daily Executive Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="assets/images/powerbi/daily-aog.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/powerbi/daily-aog-thumb.webp" width="720" height="450" loading="lazy" alt="AOG Critical table page listing open aircraft-on-ground work orders by status, days open, and promise date">
+                  <span>AOG Critical (table page)</span>
+                </a>
+              </li>
+              <li>
+                <a href="assets/images/powerbi/daily-shipped.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/powerbi/daily-shipped-thumb.webp" width="720" height="450" loading="lazy" alt="Jobs Shipped table page listing the day&#39;s shipped work orders with invoice status and totals">
+                  <span>Jobs Shipped (table page)</span>
+                </a>
+              </li>
+            </ul>
+            <p class="sample-note">Recreated with sample data. The live report uses confidential company data.</p>
+            <ul class="tech-list" aria-label="Technologies used">
+              <li>Power BI</li><li>DAX</li><li>Scheduled refresh</li><li>Multi-page report design</li>
+            </ul>
+          </article>
+
+          <article class="case-card case-card-wide">
+            <span class="project-tag">Business Intelligence · Power BI</span>
+            <h3>Operations, backlog &amp; WIP report</h3>
+            <dl class="case-details">
+              <dt>Problem</dt>
+              <dd>Throughput, revenue, backlog, and work-in-progress cost were buried in raw work-order data, with no single view of what was shipping, what was stuck, and what open jobs were costing.</dd>
+              <dt>Approach</dt>
+              <dd>Built a three-page Power BI report on the work-order data: YTD / MTD KPIs and revenue against monthly goal; backlog split by constraint (awaiting parts, customer approval, invoice pending) with aging buckets; and WIP cost by department and cost type, with estimated P&amp;L against quote value. Slicers filter by department, customer, status, and owner, and detail tables drill down to the individual work order.</dd>
+              <dt>Result</dt>
+              <dd><strong>One place to see what's shipping, what's stuck and why, and which open jobs are losing money</strong>, from the company-wide view down to a single work order.</dd>
+            </dl>
+            <ul class="pbi-gallery" aria-label="Operations report pages">
+              <li>
+                <a href="assets/images/powerbi/operations.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/powerbi/operations-thumb.webp" width="720" height="450" loading="lazy" alt="Operations Overview page: YTD and MTD KPI cards, monthly parts flow, and monthly revenue vs goal">
+                  <span>Operations Overview</span>
+                </a>
+              </li>
+              <li>
+                <a href="assets/images/powerbi/on-hold.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/powerbi/on-hold-thumb.webp" width="720" height="450" loading="lazy" alt="On Hold Overview page: backlog KPIs, backlog by department and constraint, backlog aging, and work order detail">
+                  <span>On Hold Overview</span>
+                </a>
+              </li>
+              <li>
+                <a href="assets/images/powerbi/wip.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/powerbi/wip-thumb.webp" width="720" height="450" loading="lazy" alt="WIP Overview page: WIP cost by department and cost type, highest-cost open jobs, aging, and estimated P&L table">
+                  <span>WIP Overview</span>
+                </a>
+              </li>
+            </ul>
+            <p class="sample-note">Recreated with sample data. The live reports use confidential company data.</p>
+            <ul class="tech-list" aria-label="Technologies used">
+              <li>Power BI</li><li>DAX</li><li>Data modeling</li><li>SQL Server</li>
+            </ul>
+          </article>
+
+          <article class="case-card case-card-wide">
+            <span class="project-tag">Business Intelligence · Power BI</span>
+            <h3>Labor utilization report</h3>
+            <dl class="case-details">
+              <dt>Problem</dt>
+              <dd>The CFO and department managers needed to see how much available technician time was actually clocked to work, by department and by technician, and whether it was improving.</dd>
+              <dt>Approach</dt>
+              <dd>Built a drill-down report from shop-wide overview to department to individual technician. Utilization is calculated per pay period as clocked hours over available hours, with latest vs previous period comparisons, trend lines, and clocked vs unclocked hours over time.</dd>
+              <dt>Result</dt>
+              <dd><strong>Built for the CFO and department managers</strong> to spot under-utilized departments and growing unclocked hours, then drill straight to the technicians behind the numbers.</dd>
+            </dl>
+            <ul class="pbi-gallery" aria-label="Labor utilization report pages">
+              <li>
+                <a href="assets/images/powerbi/labor-overview.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/powerbi/labor-overview-thumb.webp" width="720" height="450" loading="lazy" alt="Labor Utilization Overview page: latest vs previous utilization KPIs, shop-wide trend, and utilization by department">
+                  <span>Labor Utilization Overview</span>
+                </a>
+              </li>
+              <li>
+                <a href="assets/images/powerbi/labor-department.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/powerbi/labor-department-thumb.webp" width="720" height="450" loading="lazy" alt="Department Overview page: department utilization trend and technician utilization within the department">
+                  <span>Department Overview</span>
+                </a>
+              </li>
+              <li>
+                <a href="assets/images/powerbi/labor-technician.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/powerbi/labor-technician-thumb.webp" width="720" height="450" loading="lazy" alt="Technician Detail page: technician hours table, latest utilization, long-term trend, and clocked vs unclocked hours">
+                  <span>Technician Detail</span>
+                </a>
+              </li>
+            </ul>
+            <p class="sample-note">Recreated with sample data. The live reports use confidential company data.</p>
+            <ul class="tech-list" aria-label="Technologies used">
+              <li>Power BI</li><li>DAX</li><li>Time intelligence</li><li>Data modeling</li>
+            </ul>
+          </article>
+
           <article class="case-card">
             <span class="project-tag">Automation · API Integration</span>
             <h3>Ticket-driven account provisioning</h3>
@@ -130,62 +249,18 @@
               <li>PowerShell</li><li>SQL Server / T-SQL</li><li>Task Scheduler</li>
             </ul>
           </article>
-
-          <!-- TODO: add 1–3 Power BI screenshots (blur or swap in sample data) to assets/images/
-               and specific results (dashboards built, who uses them, reports or hours replaced). -->
-          <article class="case-card case-card-wide">
-            <span class="project-tag">Business Intelligence · Power BI</span>
-            <h3>Power BI reporting</h3>
-            <dl class="case-details">
-              <dt>Problem</dt>
-              <dd>Stakeholders depended on one-off report requests and manual exports to see what was happening in the data.</dd>
-              <dt>Approach</dt>
-              <dd>Building Power BI reports and dashboards on top of the SQL Server data I already manage and automate: shaping and modeling the data, writing measures, and turning recurring requests into dashboards people can check themselves.</dd>
-              <dt>Result</dt>
-              <dd>Self-serve visibility for stakeholders and leadership, backed by the same validated pipeline data.</dd>
-            </dl>
-            <ul class="tech-list" aria-label="Technologies used">
-              <li>Power BI</li><li>DAX</li><li>Power Query</li><li>SQL Server</li>
-            </ul>
-          </article>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="section">
-      <div class="container">
-        <p class="section-label">Experience highlights</p>
-        <h2>What I bring to a team</h2>
-
-        <div class="experience-grid">
-          <article class="info-card">
-            <h3>Power BI & Reporting</h3>
-            <p>Turning SQL Server data into Power BI reports and dashboards, with the data validation behind them to make sure the numbers are right.</p>
-          </article>
-          <article class="info-card">
-            <h3>Automation & API Integrations</h3>
-            <p>REST API integrations (Jira and third-party APIs) and PowerShell automation that connect business systems and remove repetitive manual work.</p>
-          </article>
-          <article class="info-card">
-            <h3>Azure, Entra ID & Microsoft 365</h3>
-            <p>Identity, authentication, and access controls in Entra ID, with Intune and Microsoft 365 for user access, permissions, and software compliance.</p>
-          </article>
-          <article class="info-card">
-            <h3>QA, Documentation & Stakeholders</h3>
-            <p>Test automation background (Selenium, Python, SQL validation), plus solution documentation, SOPs, and clear communication with technical and non-technical teams, including leadership.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section alt-section">
+    <section id="skills" class="section">
       <div class="container">
         <p class="section-label">Skills</p>
         <h2>Core tools and strengths</h2>
         <div class="skills-grid">
           <div class="skill-group">
             <h3>BI & Data</h3>
-            <p>Power BI, SQL Server / T-SQL, ETL, data validation, Azure SQL, MySQL</p>
+            <p>Power BI, DAX, data modeling, SQL Server / T-SQL, ETL, data validation, Azure SQL, MySQL</p>
           </div>
           <div class="skill-group">
             <h3>Automation & Integration</h3>
@@ -210,41 +285,41 @@
         <p class="section-intro">Browser projects you can open and play right now.</p>
 
         <div class="projects-grid demo-projects-grid">
-          <article class="project-card demo-card demo-card-featured">
-            <img src="assets/images/casinoInprogress.PNG" alt="Screenshot of Casino X hotel and casino game">
+          <article class="project-card demo-card">
+            <img src="assets/images/casino-x.webp" width="1230" height="947" loading="lazy" alt="Screenshot of Casino X hotel and casino game">
             <div class="project-content">
               <span class="demo-status">Live demo</span>
-              <span class="project-tag">JavaScript · Casino Game</span>
+              <span class="project-tag">JavaScript · Game</span>
               <h3>Casino X</h3>
               <p>An interactive casino experience with a hotel-themed interface, polished game flow, and browser-based gameplay.</p>
               <div class="project-actions">
-                <a class="btn btn-primary" href="https://weaponxd253.github.io/CasinoX/hotel/index.html" target="_blank" rel="noopener">Play Project</a>
+                <a class="btn btn-secondary" href="https://weaponxd253.github.io/CasinoX/hotel/index.html" target="_blank" rel="noopener">Play Project</a>
               </div>
             </div>
           </article>
 
           <article class="project-card demo-card">
-            <img src="assets/images/therapist_screen.PNG" alt="Screenshot of Bad Therapist game">
+            <img src="assets/images/bad-therapist.webp" width="1275" height="941" loading="lazy" alt="Screenshot of Bad Therapist game">
             <div class="project-content">
               <span class="demo-status">Live demo</span>
-              <span class="project-tag">JavaScript · Narrative Game</span>
+              <span class="project-tag">JavaScript · Game</span>
               <h3>Bad Therapist</h3>
               <p>A browser game built around offbeat therapy-session choices, scoring, and replayable interactive scenarios.</p>
               <div class="project-actions">
-                <a class="btn btn-primary" href="https://weaponxd253.github.io/Bad-therapist/" target="_blank" rel="noopener">Play Project</a>
+                <a class="btn btn-secondary" href="https://weaponxd253.github.io/Bad-therapist/" target="_blank" rel="noopener">Play Project</a>
               </div>
             </div>
           </article>
 
           <article class="project-card demo-card">
-            <img src="assets/images/jeopardyImg.PNG" alt="Screenshot of Jeopardy study tool">
+            <img src="assets/images/jeopardy-study.webp" width="1400" height="836" loading="lazy" alt="Screenshot of Jeopardy study tool">
             <div class="project-content">
               <span class="demo-status">Live demo</span>
-              <span class="project-tag">JavaScript · Educational Tool</span>
+              <span class="project-tag">JavaScript · Study tool</span>
               <h3>Jeopardy Study Tool</h3>
               <p>A study application inspired by quiz-game interactions, built to make learning more engaging and structured.</p>
               <div class="project-actions">
-                <a class="btn btn-primary" href="https://weaponxd253.github.io/jeopardyStudy/" target="_blank" rel="noopener">Try It</a>
+                <a class="btn btn-secondary" href="https://weaponxd253.github.io/jeopardyStudy/" target="_blank" rel="noopener">Try It</a>
               </div>
             </div>
           </article>
