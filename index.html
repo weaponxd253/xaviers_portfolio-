@@ -104,7 +104,7 @@
       <div class="container">
         <p class="section-label">Case studies</p>
         <h2>Work that saves real time</h2>
-        <p class="section-intro">Highlights from my day job. Internal systems and data stay private, so these focus on the problem, the approach, and the result.</p>
+        <p class="section-intro">Highlights from my day job, plus a personal Power BI project on public data. Work reports are recreated with sample data, because the real data stays private.</p>
 
         <div class="case-grid">
           <article class="case-card case-card-wide">
@@ -215,6 +215,37 @@
             <p class="sample-note">Recreated with sample data. The live reports use confidential company data.</p>
             <ul class="tech-list" aria-label="Technologies used">
               <li>Power BI</li><li>DAX</li><li>Time intelligence</li><li>Data modeling</li>
+            </ul>
+          </article>
+
+          <article class="case-card case-card-wide">
+            <span class="project-tag">Personal project · Power BI · Public data</span>
+            <h3>NTSB aviation safety analysis <span class="wip-badge">In progress</span></h3>
+            <dl class="case-details">
+              <dt>Goal</dt>
+              <dd>A sandbox for trying new Power BI techniques on a large, messy, real-world dataset: about 47,000 NTSB aviation events from 2000 to today.</dd>
+              <dt>Approach</dt>
+              <dd>Wrote a script to pull event data from the NTSB's public data, then grouped the free-text probable-cause narratives into eight primary cause categories, tracking how many events could be categorized (83%) as its own KPI. Report pages cover safety trends, causes, injury severity, aircraft category, manufacturer, and damage, with slicers for year, state, cause, aircraft, and weather.</dd>
+              <dt>Result</dt>
+              <dd><strong>A working analysis of 25+ years of aviation events</strong>, and my test bed for new visuals, DAX patterns, and modeling ideas before I use them at work.</dd>
+            </dl>
+            <ul class="pbi-gallery pbi-gallery-two" aria-label="NTSB aviation safety report pages">
+              <li>
+                <a href="assets/images/powerbi/ntsb-overview.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/powerbi/ntsb-overview-thumb.webp" width="720" height="399" loading="lazy" alt="Aviation Safety Overview page: total events, fatal events, fatalities, fatal event rate and cause coverage KPIs, events by primary cause, events by year, and events by injury severity">
+                  <span>Aviation Safety Overview</span>
+                </a>
+              </li>
+              <li>
+                <a href="assets/images/powerbi/ntsb-risk-factors.webp" target="_blank" rel="noopener">
+                  <img src="assets/images/powerbi/ntsb-risk-factors-thumb.webp" width="720" height="402" loading="lazy" alt="Aircraft and Risk Factors page: events by aircraft category, fatal event share by category, top aircraft makes, and aircraft damage severity">
+                  <span>Aircraft &amp; Risk Factors</span>
+                </a>
+              </li>
+            </ul>
+            <p class="sample-note">Real report on public NTSB data. Still a work in progress.</p>
+            <ul class="tech-list" aria-label="Technologies used">
+              <li>Power BI</li><li>DAX</li><li>Scripted data extraction</li><li>Text categorization</li><li>Public data</li>
             </ul>
           </article>
 
