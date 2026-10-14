@@ -495,8 +495,9 @@ body.light-theme .demo-status {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: top left;
+  object-fit: contain;
+  object-position: top center;
+  background: #fff;
 }
 
 .pbi-gallery span {
