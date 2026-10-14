@@ -1,44 +1,89 @@
 const fs = require('fs');
 const path = require('path');
-const { JSDOM } = require('jsdom');
-const gsap = require('gsap');
 
-describe('About Me Section', () => {
-    let document;
+const html = fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf8');
 
-    beforeAll(() => {
-        const html = fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf8');
-        const dom = new JSDOM(html, { runScripts: 'dangerously', resources: 'usable' });
-        document = dom.window.document;
+function loadPage() {
+  document.documentElement.innerHTML = new DOMParser()
+    .parseFromString(html, 'text/html')
+    .documentElement.innerHTML;
+  localStorage.clear();
+  jest.isolateModules(() => require('./script'));
+}
 
-        // Mock gsap functions
-        gsap.fromTo = jest.fn();
-        gsap.to = jest.fn();
+describe('Portfolio page', () => {
+  beforeEach(loadPage);
+
+  test('has every main section', () => {
+    ['home', 'about', 'work', 'experience', 'skills', 'projects', 'contact'].forEach(id => {
+      expect(document.getElementById(id)).not.toBeNull();
     });
+  });
 
-    test('should have About Me section', () => {
-        const aboutSection = document.querySelector('#about');
-        expect(aboutSection).not.toBeNull();
+  test('every in-page nav link points at an existing section', () => {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      const id = link.getAttribute('href').slice(1);
+      expect(document.getElementById(id)).not.toBeNull();
     });
+  });
 
-    test('should have profile image in About Me section', () => {
-        const profileImg = document.querySelector('#about .profile-img');
-        expect(profileImg).not.toBeNull();
-        expect(profileImg.getAttribute('src')).toBe('assets/images/myLogo.jpg');
-        expect(profileImg.getAttribute('alt')).toBe('Profile Picture');
+  test('every local image and document exists', () => {
+    const localRefs = [
+      ...[...document.querySelectorAll('img')].map(img => img.getAttribute('src')),
+      ...[...document.querySelectorAll('a[href]')]
+        .map(a => a.getAttribute('href'))
+        .filter(href => !/^(https?:|mailto:|#)/.test(href)),
+    ];
+    expect(localRefs.length).toBeGreaterThan(0);
+    localRefs.forEach(ref => {
+      expect(fs.existsSync(path.resolve(__dirname, ref))).toBe(true);
     });
+  });
 
-    test('should have correct paragraphs in About Me section', () => {
-        const paragraphs = document.querySelectorAll('#about p');
-        expect(paragraphs.length).toBe(7); // Ensure all paragraphs are present
-        expect(paragraphs[0].textContent).toContain("Hello! I'm Xavier Denson,");
-        expect(paragraphs[6].textContent).toContain("xdenson253@outlook.com");
-    });
+  test('resume download points at a PDF', () => {
+    const resume = document.querySelector('a[download]');
+    expect(resume.getAttribute('href')).toMatch(/\.pdf$/);
+  });
 
-    test('should animate sections on load', () => {
-        require('./script'); // Assuming your script is in script.js and it's located in the same directory as the test file
-        const sections = document.querySelectorAll('section');
-        expect(gsap.fromTo).toHaveBeenCalled();
-        expect(gsap.to).toHaveBeenCalled();
+  test('external links open safely in a new tab', () => {
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+      expect(link.getAttribute('rel')).toContain('noopener');
     });
+  });
+
+  test('every image has alt text', () => {
+    document.querySelectorAll('img').forEach(img => {
+      expect(img.getAttribute('alt')).toBeTruthy();
+    });
+  });
+});
+
+describe('Interactions', () => {
+  beforeEach(loadPage);
+
+  test('theme switcher toggles light mode and remembers it', () => {
+    const switcher = document.getElementById('themeSwitcher');
+    expect(document.body.classList.contains('light-theme')).toBe(false);
+
+    switcher.click();
+    expect(document.body.classList.contains('light-theme')).toBe(true);
+    expect(localStorage.getItem('portfolio-theme')).toBe('light');
+
+    switcher.click();
+    expect(document.body.classList.contains('light-theme')).toBe(false);
+    expect(localStorage.getItem('portfolio-theme')).toBe('dark');
+  });
+
+  test('mobile nav toggle opens and closes the menu', () => {
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('navMenu');
+
+    toggle.click();
+    expect(menu.classList.contains('open')).toBe(true);
+    expect(toggle.getAttribute('aria-expanded')).toBe('true');
+
+    toggle.click();
+    expect(menu.classList.contains('open')).toBe(false);
+    expect(toggle.getAttribute('aria-expanded')).toBe('false');
+  });
 });

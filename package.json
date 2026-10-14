@@ -1,0 +1,13 @@
+{
+  "name": "xaviers-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio site for Xavier Denson, BI & Automation Engineer",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  }
+}
