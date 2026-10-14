@@ -11,6 +11,13 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('portfolio-theme');
+      var prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      if (savedTheme === 'light' || (!savedTheme && prefersLight)) document.body.classList.add('light-theme');
+    } catch (e) {}
+  </script>
   <header class="site-header">
     <div class="container nav-wrap">
       <a class="brand" href="#home" aria-label="Go to home section">
@@ -23,15 +30,14 @@
         <ul id="navMenu">
           <li><a href="#about">About</a></li>
           <li><a href="#work">Work</a></li>
-          <li><a href="#experience">Experience</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
-      <button id="themeSwitcher" class="theme-switcher" type="button" aria-label="Toggle theme">
-        <span id="themeSwitcherIcon" aria-hidden="true">🌙</span>
+      <button id="themeSwitcher" class="theme-switcher" type="button" aria-label="Switch to light theme">
+        <span id="themeSwitcherIcon" aria-hidden="true">☀️</span>
       </button>
     </div>
   </header>
@@ -51,12 +57,20 @@
             <a class="btn btn-secondary" href="assets/documents/Xavier_Denson_Resume.pdf" download>Download Resume</a>
           </div>
 
-          <ul class="hero-points">
-            <li>Automated Jira-driven account provisioning: a ~20-minute manual process is now a single automated action</li>
-            <li>Built a PowerShell + SQL Server data pipeline that eliminated ~200 hours/year of manual work</li>
-            <li>Building Power BI reporting on top of the SQL data I manage and automate</li>
-            <li>Cut QA testing cycle time 30% and defects 22% with Selenium/Python automation at Heritage Bank</li>
-          </ul>
+          <dl class="hero-stats">
+            <div>
+              <dt>200 hrs/yr</dt>
+              <dd>manual work removed by a SQL data pipeline</dd>
+            </div>
+            <div>
+              <dt>20 min → 1 click</dt>
+              <dd>account setup via Jira API automation</dd>
+            </div>
+            <div>
+              <dt>30% faster</dt>
+              <dd>QA test cycles, with 22% fewer defects</dd>
+            </div>
+          </dl>
         </div>
 
         <aside class="hero-card">
@@ -78,16 +92,10 @@
         <p class="section-label">About</p>
         <h2>Systems thinker who measures results in hours saved</h2>
         <p>
-          I'm Xavier Denson, a systems and automation-focused IT professional with a B.S. in Software Development from Green River College and a Google Advanced Data Analytics certificate. My background spans software support, QA automation, and development, so I understand both how systems are built and how they break.
+          I'm Xavier Denson, a systems and automation-focused IT professional with a B.S. in Software Development and a Google Advanced Data Analytics certificate. At Aero Controls I build the integrations, SQL pipelines, and Power BI reporting that connect our business systems, and I administer Azure / Entra ID identity and access alongside Intune and Microsoft 365.
         </p>
         <p>
-          At Aero Controls I design the automations and integrations that connect our business systems: a Jira REST API workflow that provisions and deactivates user accounts straight from tickets, a PowerShell / SQL Server pipeline that runs, validates, and moves data between systems, and, increasingly, Power BI reporting built on that data. I also administer Azure / Entra ID identity and access alongside Intune and Microsoft 365.
-        </p>
-        <p>
-          Before that I built Selenium and Python test automation at Heritage Bank while working with regulated financial data, and Java / Spring Boot APIs as an intern at Costco. I use AI-assisted development (Claude Code and MCP tooling) to build and debug faster, and I validate its output against source systems before anything reaches production.
-        </p>
-        <p>
-          I'm also available for freelance work in Power BI, SQL reporting, and workflow automation.
+          Before that I built Selenium and Python test automation on regulated financial data at Heritage Bank, and Java / Spring Boot APIs at Costco. I document what I build, work easily with technical and non-technical teams, and use AI-assisted development (Claude Code, MCP) while validating its output against source systems.
         </p>
       </div>
     </section>
@@ -152,33 +160,7 @@
       </div>
     </section>
 
-    <section id="experience" class="section">
-      <div class="container">
-        <p class="section-label">Experience highlights</p>
-        <h2>What I bring to a team</h2>
-
-        <div class="experience-grid">
-          <article class="info-card">
-            <h3>Power BI & Reporting</h3>
-            <p>Turning SQL Server data into Power BI reports and dashboards, with the data validation behind them to make sure the numbers are right.</p>
-          </article>
-          <article class="info-card">
-            <h3>Automation & API Integrations</h3>
-            <p>REST API integrations (Jira and third-party APIs) and PowerShell automation that connect business systems and remove repetitive manual work.</p>
-          </article>
-          <article class="info-card">
-            <h3>Azure, Entra ID & Microsoft 365</h3>
-            <p>Identity, authentication, and access controls in Entra ID, with Intune and Microsoft 365 for user access, permissions, and software compliance.</p>
-          </article>
-          <article class="info-card">
-            <h3>QA, Documentation & Stakeholders</h3>
-            <p>Test automation background (Selenium, Python, SQL validation), plus solution documentation, SOPs, and clear communication with technical and non-technical teams, including leadership.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section alt-section">
+    <section id="skills" class="section">
       <div class="container">
         <p class="section-label">Skills</p>
         <h2>Core tools and strengths</h2>
@@ -211,7 +193,7 @@
 
         <div class="projects-grid demo-projects-grid">
           <article class="project-card demo-card demo-card-featured">
-            <img src="assets/images/casinoInprogress.PNG" alt="Screenshot of Casino X hotel and casino game">
+            <img src="assets/images/casino-x.webp" width="1230" height="947" loading="lazy" alt="Screenshot of Casino X hotel and casino game">
             <div class="project-content">
               <span class="demo-status">Live demo</span>
               <span class="project-tag">JavaScript · Casino Game</span>
@@ -224,7 +206,7 @@
           </article>
 
           <article class="project-card demo-card">
-            <img src="assets/images/therapist_screen.PNG" alt="Screenshot of Bad Therapist game">
+            <img src="assets/images/bad-therapist.webp" width="1275" height="941" loading="lazy" alt="Screenshot of Bad Therapist game">
             <div class="project-content">
               <span class="demo-status">Live demo</span>
               <span class="project-tag">JavaScript · Narrative Game</span>
@@ -237,7 +219,7 @@
           </article>
 
           <article class="project-card demo-card">
-            <img src="assets/images/jeopardyImg.PNG" alt="Screenshot of Jeopardy study tool">
+            <img src="assets/images/jeopardy-study.webp" width="1400" height="836" loading="lazy" alt="Screenshot of Jeopardy study tool">
             <div class="project-content">
               <span class="demo-status">Live demo</span>
               <span class="project-tag">JavaScript · Educational Tool</span>
